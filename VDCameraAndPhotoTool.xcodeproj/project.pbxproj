@@ -1,0 +1,546 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3B0476421D5829A8004021B4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B0476411D5829A8004021B4 /* main.m */; };
+		3B0476451D5829A8004021B4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B0476441D5829A8004021B4 /* AppDelegate.m */; };
+		3B0476481D5829A8004021B4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B0476471D5829A8004021B4 /* ViewController.m */; };
+		3B04764B1D5829A8004021B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B0476491D5829A8004021B4 /* Main.storyboard */; };
+		3B04764D1D5829A8004021B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B04764C1D5829A8004021B4 /* Assets.xcassets */; };
+		3B0476501D5829A8004021B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B04764E1D5829A8004021B4 /* LaunchScreen.storyboard */; };
+		3B04765B1D5829A8004021B4 /* VDCameraAndPhotoToolTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B04765A1D5829A8004021B4 /* VDCameraAndPhotoToolTests.m */; };
+		3B0476661D5829A8004021B4 /* VDCameraAndPhotoToolUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B0476651D5829A8004021B4 /* VDCameraAndPhotoToolUITests.m */; };
+		3B0476761D582A0C004021B4 /* VDCameraAndPhotoTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B0476751D582A0C004021B4 /* VDCameraAndPhotoTool.m */; };
+		3B0476791D5831BA004021B4 /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B0476781D5831BA004021B4 /* UIImage+Extension.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3B0476571D5829A8004021B4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3B0476351D5829A8004021B4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3B04763C1D5829A8004021B4;
+			remoteInfo = VDCameraAndPhotoTool;
+		};
+		3B0476621D5829A8004021B4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3B0476351D5829A8004021B4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3B04763C1D5829A8004021B4;
+			remoteInfo = VDCameraAndPhotoTool;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3B04763D1D5829A8004021B4 /* VDCameraAndPhotoTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VDCameraAndPhotoTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B0476411D5829A8004021B4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3B0476431D5829A8004021B4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		3B0476441D5829A8004021B4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		3B0476461D5829A8004021B4 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		3B0476471D5829A8004021B4 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		3B04764A1D5829A8004021B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3B04764C1D5829A8004021B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3B04764F1D5829A8004021B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3B0476511D5829A8004021B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3B0476561D5829A8004021B4 /* VDCameraAndPhotoToolTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VDCameraAndPhotoToolTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B04765A1D5829A8004021B4 /* VDCameraAndPhotoToolTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VDCameraAndPhotoToolTests.m; sourceTree = "<group>"; };
+		3B04765C1D5829A8004021B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3B0476611D5829A8004021B4 /* VDCameraAndPhotoToolUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VDCameraAndPhotoToolUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B0476651D5829A8004021B4 /* VDCameraAndPhotoToolUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VDCameraAndPhotoToolUITests.m; sourceTree = "<group>"; };
+		3B0476671D5829A8004021B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3B0476741D582A0C004021B4 /* VDCameraAndPhotoTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VDCameraAndPhotoTool.h; sourceTree = "<group>"; };
+		3B0476751D582A0C004021B4 /* VDCameraAndPhotoTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VDCameraAndPhotoTool.m; sourceTree = "<group>"; };
+		3B0476771D5831BA004021B4 /* UIImage+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Extension.h"; sourceTree = "<group>"; };
+		3B0476781D5831BA004021B4 /* UIImage+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extension.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3B04763A1D5829A8004021B4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3B0476531D5829A8004021B4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3B04765E1D5829A8004021B4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3B0476341D5829A8004021B4 = {
+			isa = PBXGroup;
+			children = (
+				3B04763F1D5829A8004021B4 /* VDCameraAndPhotoTool */,
+				3B0476591D5829A8004021B4 /* VDCameraAndPhotoToolTests */,
+				3B0476641D5829A8004021B4 /* VDCameraAndPhotoToolUITests */,
+				3B04763E1D5829A8004021B4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3B04763E1D5829A8004021B4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3B04763D1D5829A8004021B4 /* VDCameraAndPhotoTool.app */,
+				3B0476561D5829A8004021B4 /* VDCameraAndPhotoToolTests.xctest */,
+				3B0476611D5829A8004021B4 /* VDCameraAndPhotoToolUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3B04763F1D5829A8004021B4 /* VDCameraAndPhotoTool */ = {
+			isa = PBXGroup;
+			children = (
+				3B0476731D582A0C004021B4 /* VDCameraAndPhotoTool */,
+				3B0476431D5829A8004021B4 /* AppDelegate.h */,
+				3B0476441D5829A8004021B4 /* AppDelegate.m */,
+				3B0476461D5829A8004021B4 /* ViewController.h */,
+				3B0476471D5829A8004021B4 /* ViewController.m */,
+				3B0476491D5829A8004021B4 /* Main.storyboard */,
+				3B04764C1D5829A8004021B4 /* Assets.xcassets */,
+				3B04764E1D5829A8004021B4 /* LaunchScreen.storyboard */,
+				3B0476511D5829A8004021B4 /* Info.plist */,
+				3B0476401D5829A8004021B4 /* Supporting Files */,
+			);
+			path = VDCameraAndPhotoTool;
+			sourceTree = "<group>";
+		};
+		3B0476401D5829A8004021B4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3B0476411D5829A8004021B4 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3B0476591D5829A8004021B4 /* VDCameraAndPhotoToolTests */ = {
+			isa = PBXGroup;
+			children = (
+				3B04765A1D5829A8004021B4 /* VDCameraAndPhotoToolTests.m */,
+				3B04765C1D5829A8004021B4 /* Info.plist */,
+			);
+			path = VDCameraAndPhotoToolTests;
+			sourceTree = "<group>";
+		};
+		3B0476641D5829A8004021B4 /* VDCameraAndPhotoToolUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3B0476651D5829A8004021B4 /* VDCameraAndPhotoToolUITests.m */,
+				3B0476671D5829A8004021B4 /* Info.plist */,
+			);
+			path = VDCameraAndPhotoToolUITests;
+			sourceTree = "<group>";
+		};
+		3B0476731D582A0C004021B4 /* VDCameraAndPhotoTool */ = {
+			isa = PBXGroup;
+			children = (
+				3B0476771D5831BA004021B4 /* UIImage+Extension.h */,
+				3B0476781D5831BA004021B4 /* UIImage+Extension.m */,
+				3B0476741D582A0C004021B4 /* VDCameraAndPhotoTool.h */,
+				3B0476751D582A0C004021B4 /* VDCameraAndPhotoTool.m */,
+			);
+			path = VDCameraAndPhotoTool;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3B04763C1D5829A8004021B4 /* VDCameraAndPhotoTool */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3B04766A1D5829A8004021B4 /* Build configuration list for PBXNativeTarget "VDCameraAndPhotoTool" */;
+			buildPhases = (
+				3B0476391D5829A8004021B4 /* Sources */,
+				3B04763A1D5829A8004021B4 /* Frameworks */,
+				3B04763B1D5829A8004021B4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VDCameraAndPhotoTool;
+			productName = VDCameraAndPhotoTool;
+			productReference = 3B04763D1D5829A8004021B4 /* VDCameraAndPhotoTool.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3B0476551D5829A8004021B4 /* VDCameraAndPhotoToolTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3B04766D1D5829A8004021B4 /* Build configuration list for PBXNativeTarget "VDCameraAndPhotoToolTests" */;
+			buildPhases = (
+				3B0476521D5829A8004021B4 /* Sources */,
+				3B0476531D5829A8004021B4 /* Frameworks */,
+				3B0476541D5829A8004021B4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3B0476581D5829A8004021B4 /* PBXTargetDependency */,
+			);
+			name = VDCameraAndPhotoToolTests;
+			productName = VDCameraAndPhotoToolTests;
+			productReference = 3B0476561D5829A8004021B4 /* VDCameraAndPhotoToolTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3B0476601D5829A8004021B4 /* VDCameraAndPhotoToolUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3B0476701D5829A8004021B4 /* Build configuration list for PBXNativeTarget "VDCameraAndPhotoToolUITests" */;
+			buildPhases = (
+				3B04765D1D5829A8004021B4 /* Sources */,
+				3B04765E1D5829A8004021B4 /* Frameworks */,
+				3B04765F1D5829A8004021B4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3B0476631D5829A8004021B4 /* PBXTargetDependency */,
+			);
+			name = VDCameraAndPhotoToolUITests;
+			productName = VDCameraAndPhotoToolUITests;
+			productReference = 3B0476611D5829A8004021B4 /* VDCameraAndPhotoToolUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3B0476351D5829A8004021B4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = lyb;
+				TargetAttributes = {
+					3B04763C1D5829A8004021B4 = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = MMU4TJ6942;
+					};
+					3B0476551D5829A8004021B4 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 3B04763C1D5829A8004021B4;
+					};
+					3B0476601D5829A8004021B4 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 3B04763C1D5829A8004021B4;
+					};
+				};
+			};
+			buildConfigurationList = 3B0476381D5829A8004021B4 /* Build configuration list for PBXProject "VDCameraAndPhotoTool" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3B0476341D5829A8004021B4;
+			productRefGroup = 3B04763E1D5829A8004021B4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3B04763C1D5829A8004021B4 /* VDCameraAndPhotoTool */,
+				3B0476551D5829A8004021B4 /* VDCameraAndPhotoToolTests */,
+				3B0476601D5829A8004021B4 /* VDCameraAndPhotoToolUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3B04763B1D5829A8004021B4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B0476501D5829A8004021B4 /* LaunchScreen.storyboard in Resources */,
+				3B04764D1D5829A8004021B4 /* Assets.xcassets in Resources */,
+				3B04764B1D5829A8004021B4 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3B0476541D5829A8004021B4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3B04765F1D5829A8004021B4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3B0476391D5829A8004021B4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B0476791D5831BA004021B4 /* UIImage+Extension.m in Sources */,
+				3B0476481D5829A8004021B4 /* ViewController.m in Sources */,
+				3B0476451D5829A8004021B4 /* AppDelegate.m in Sources */,
+				3B0476421D5829A8004021B4 /* main.m in Sources */,
+				3B0476761D582A0C004021B4 /* VDCameraAndPhotoTool.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3B0476521D5829A8004021B4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B04765B1D5829A8004021B4 /* VDCameraAndPhotoToolTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3B04765D1D5829A8004021B4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B0476661D5829A8004021B4 /* VDCameraAndPhotoToolUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3B0476581D5829A8004021B4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3B04763C1D5829A8004021B4 /* VDCameraAndPhotoTool */;
+			targetProxy = 3B0476571D5829A8004021B4 /* PBXContainerItemProxy */;
+		};
+		3B0476631D5829A8004021B4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3B04763C1D5829A8004021B4 /* VDCameraAndPhotoTool */;
+			targetProxy = 3B0476621D5829A8004021B4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3B0476491D5829A8004021B4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3B04764A1D5829A8004021B4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3B04764E1D5829A8004021B4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3B04764F1D5829A8004021B4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3B0476681D5829A8004021B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3B0476691D5829A8004021B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3B04766B1D5829A8004021B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = VDCameraAndPhotoTool/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.lyb.VDCameraAndPhotoTool;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3B04766C1D5829A8004021B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = VDCameraAndPhotoTool/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.lyb.VDCameraAndPhotoTool;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		3B04766E1D5829A8004021B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = VDCameraAndPhotoToolTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.lyb.VDCameraAndPhotoToolTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VDCameraAndPhotoTool.app/VDCameraAndPhotoTool";
+			};
+			name = Debug;
+		};
+		3B04766F1D5829A8004021B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = VDCameraAndPhotoToolTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.lyb.VDCameraAndPhotoToolTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VDCameraAndPhotoTool.app/VDCameraAndPhotoTool";
+			};
+			name = Release;
+		};
+		3B0476711D5829A8004021B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = VDCameraAndPhotoToolUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.lyb.VDCameraAndPhotoToolUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = VDCameraAndPhotoTool;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		3B0476721D5829A8004021B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = VDCameraAndPhotoToolUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.lyb.VDCameraAndPhotoToolUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = VDCameraAndPhotoTool;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3B0476381D5829A8004021B4 /* Build configuration list for PBXProject "VDCameraAndPhotoTool" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B0476681D5829A8004021B4 /* Debug */,
+				3B0476691D5829A8004021B4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3B04766A1D5829A8004021B4 /* Build configuration list for PBXNativeTarget "VDCameraAndPhotoTool" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B04766B1D5829A8004021B4 /* Debug */,
+				3B04766C1D5829A8004021B4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		3B04766D1D5829A8004021B4 /* Build configuration list for PBXNativeTarget "VDCameraAndPhotoToolTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B04766E1D5829A8004021B4 /* Debug */,
+				3B04766F1D5829A8004021B4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		3B0476701D5829A8004021B4 /* Build configuration list for PBXNativeTarget "VDCameraAndPhotoToolUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B0476711D5829A8004021B4 /* Debug */,
+				3B0476721D5829A8004021B4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3B0476351D5829A8004021B4 /* Project object */;
+}

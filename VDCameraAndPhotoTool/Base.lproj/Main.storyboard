@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8mh-7g-nOR">
+                                <rect key="frame" x="171" y="490" width="30" height="30"/>
+                                <state key="normal" title="拍照"/>
+                                <connections>
+                                    <action selector="cameraClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fpu-Cw-chY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zc1-nZ-woG">
+                                <rect key="frame" x="400" y="490" width="30" height="30"/>
+                                <state key="normal" title="相册"/>
+                                <connections>
+                                    <action selector="photoClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mEL-1D-RRb"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pz9-OO-8aK">
+                                <rect key="frame" x="0.0" y="20" width="600" height="380"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1st-0a-ZpY">
+                                <rect key="frame" x="281" y="490" width="39" height="30"/>
+                                <state key="normal" title="sheet"/>
+                                <connections>
+                                    <action selector="sheetClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kNE-OT-qcF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="zc1-nZ-woG" secondAttribute="bottom" constant="80" id="21z-rL-hAy"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="1st-0a-ZpY" secondAttribute="bottom" constant="80" id="5He-v9-Cw6"/>
+                            <constraint firstItem="Pz9-OO-8aK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="GI1-iZ-gLF"/>
+                            <constraint firstItem="zc1-nZ-woG" firstAttribute="leading" secondItem="1st-0a-ZpY" secondAttribute="trailing" constant="80" id="HMI-OV-Qak"/>
+                            <constraint firstItem="1st-0a-ZpY" firstAttribute="leading" secondItem="8mh-7g-nOR" secondAttribute="trailing" constant="80" id="QDV-Qd-tkT"/>
+                            <constraint firstItem="Pz9-OO-8aK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="R26-w8-P8c"/>
+                            <constraint firstAttribute="bottom" secondItem="Pz9-OO-8aK" secondAttribute="bottom" constant="200" id="c6w-Pz-3Dp"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="8mh-7g-nOR" secondAttribute="bottom" constant="80" id="kEl-GA-SrE"/>
+                            <constraint firstItem="1st-0a-ZpY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qHe-xb-6gn"/>
+                            <constraint firstAttribute="trailing" secondItem="Pz9-OO-8aK" secondAttribute="trailing" id="u19-Wb-eKK"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imgView" destination="Pz9-OO-8aK" id="FBz-O4-PLl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
