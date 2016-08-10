@@ -41,6 +41,13 @@
                                     <action selector="sheetClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kNE-OT-qcF"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r0Y-51-3Pc">
+                                <rect key="frame" x="285" y="445" width="30" height="30"/>
+                                <state key="normal" title="录像"/>
+                                <connections>
+                                    <action selector="videoClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SPz-s9-hQX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -50,8 +57,10 @@
                             <constraint firstItem="zc1-nZ-woG" firstAttribute="leading" secondItem="1st-0a-ZpY" secondAttribute="trailing" constant="80" id="HMI-OV-Qak"/>
                             <constraint firstItem="1st-0a-ZpY" firstAttribute="leading" secondItem="8mh-7g-nOR" secondAttribute="trailing" constant="80" id="QDV-Qd-tkT"/>
                             <constraint firstItem="Pz9-OO-8aK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="R26-w8-P8c"/>
+                            <constraint firstItem="r0Y-51-3Pc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UBe-Zj-57t"/>
                             <constraint firstAttribute="bottom" secondItem="Pz9-OO-8aK" secondAttribute="bottom" constant="200" id="c6w-Pz-3Dp"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="8mh-7g-nOR" secondAttribute="bottom" constant="80" id="kEl-GA-SrE"/>
+                            <constraint firstItem="1st-0a-ZpY" firstAttribute="top" secondItem="r0Y-51-3Pc" secondAttribute="bottom" constant="15" id="leh-yc-Ghq"/>
                             <constraint firstItem="1st-0a-ZpY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qHe-xb-6gn"/>
                             <constraint firstAttribute="trailing" secondItem="Pz9-OO-8aK" secondAttribute="trailing" id="u19-Wb-eKK"/>
                         </constraints>

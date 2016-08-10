@@ -523,6 +523,7 @@
 				3B04766C1D5829A8004021B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3B04766D1D5829A8004021B4 /* Build configuration list for PBXNativeTarget "VDCameraAndPhotoToolTests" */ = {
 			isa = XCConfigurationList;
@@ -531,6 +532,7 @@
 				3B04766F1D5829A8004021B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3B0476701D5829A8004021B4 /* Build configuration list for PBXNativeTarget "VDCameraAndPhotoToolUITests" */ = {
 			isa = XCConfigurationList;
@@ -539,6 +541,7 @@
 				3B0476721D5829A8004021B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

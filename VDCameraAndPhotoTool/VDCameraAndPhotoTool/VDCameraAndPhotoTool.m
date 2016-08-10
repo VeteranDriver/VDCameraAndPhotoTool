@@ -8,7 +8,15 @@
 
 #import "VDCameraAndPhotoTool.h"
 #import "UIImage+Extension.h"
+#import <MobileCoreServices/MobileCoreServices.h>
 
+
+typedef enum {
+    
+    photoType,
+    cameraType,
+    videoType
+}pickerType;
 static VDCameraAndPhotoTool *tool ;
 
 @interface VDCameraAndPhotoTool ()<UIActionSheetDelegate>
@@ -20,6 +28,7 @@ static VDCameraAndPhotoTool *tool ;
 @property(nonatomic, weak)UIViewController *fromVc;
 
 @property (nonatomic, strong) UIImagePickerController *picker;
+
 
 @end
 
@@ -37,70 +46,111 @@ static VDCameraAndPhotoTool *tool ;
     return tool;
 }
 
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        
-        self.picker = [[UIImagePickerController alloc] init];//初始化
-        self.picker.delegate = self;
-        self.picker.allowsEditing = NO;//设置不可编辑
-    }
-    return self;
-}
 
-- (void)showCameraInViewComtroller:(UIViewController *)vc andFinishBack:(cameraReturn)finishBack {
+- (void)showVideoInViewController:(UIViewController *)vc andFinishBack:(cameraReturn)finishBack {
     
     if (finishBack) {
         
         self.finishBack = finishBack;
     }
     vc.modalPresentationStyle = UIModalPresentationOverCurrentContext;
-    UIImagePickerControllerSourceType sourceType = UIImagePickerControllerSourceTypeCamera;
-    self.picker.sourceType = sourceType;
+    
+    [self setUpImagePicker:videoType];
+    
     [vc presentViewController:self.picker animated:YES completion:nil];//进入照相界面
     [vc.view layoutIfNeeded];
 }
 
-- (void)showPhotoInViewComtroller:(UIViewController *)vc andFinishBack:(cameraReturn)finishBack{
+
+- (void)showCameraInViewController:(UIViewController *)vc andFinishBack:(cameraReturn)finishBack {
+    
+    if (finishBack) {
+        
+        self.finishBack = finishBack;
+    }
+    vc.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+    
+    [self setUpImagePicker:cameraType];
+    
+    [vc presentViewController:self.picker animated:YES completion:nil];//进入照相界面
+    [vc.view layoutIfNeeded];
+}
+
+- (void)showPhotoInViewController:(UIViewController *)vc andFinishBack:(cameraReturn)finishBack{
     
     if (finishBack) {
         
         self.finishBack = finishBack;
     }
     
-    UIImagePickerControllerSourceType sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+   [self setUpImagePicker:photoType];
     
-    self.picker.sourceType = sourceType;
     vc.modalPresentationStyle = UIModalPresentationOverCurrentContext;
     [vc presentViewController:self.picker animated:YES completion:nil];//进入相册界面
     [vc.view layoutIfNeeded];
 
 }
 
+#pragma mark - imagePicker delegate
+/**
+ *  完成回调
+ *
+ *  @param picker imagePickerController
+ *  @param info   信息字典
+ */
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
-    
-    UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
-    
-    if (picker.sourceType == UIImagePickerControllerSourceTypeCamera) {
+    NSString *mediaType=[info objectForKey:UIImagePickerControllerMediaType];
+    if ([mediaType isEqualToString:(NSString *)kUTTypeImage]) {
         
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+        
+        if (picker.sourceType == UIImagePickerControllerSourceTypeCamera) {
             
-            UIImageWriteToSavedPhotosAlbum(image, nil, nil, NULL);
-        });
-    }
-    
-   //根据屏幕方向裁减图片(640, 480)||(480, 640),如不需要裁减请注释
-    image = [UIImage resizeImageWithOriginalImage:image];
-    
-    if (self.finishBack) {
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                
+                UIImageWriteToSavedPhotosAlbum(image, nil, nil, NULL);
+            });
+        }
         
-        self.finishBack(image);
+        //根据屏幕方向裁减图片(640, 480)||(480, 640),如不需要裁减请注释
+        image = [UIImage resizeImageWithOriginalImage:image];
+        
+        if (self.finishBack) {
+            
+            self.finishBack(image,nil);
+        }
+        
+        [picker dismissViewControllerAnimated:YES completion:nil];
+        
+    }else if ([mediaType isEqualToString:(NSString *)kUTTypeMovie]) {
+        
+        NSURL *url=[info objectForKey:UIImagePickerControllerMediaURL];//视频路径
+        NSString *urlStr=[url path];
+        if (UIVideoAtPathIsCompatibleWithSavedPhotosAlbum(urlStr)) {
+            
+            //保存视频到相簿，注意也可以使用ALAssetsLibrary来保存
+            UISaveVideoAtPathToSavedPhotosAlbum(urlStr, self, @selector(video:didFinishSavingWithError:contextInfo:), nil);//保存视频到相簿
+        }
     }
     
-    [picker dismissViewControllerAnimated:YES completion:nil];
+    
 }
 
+//视频保存后的回调
+- (void)video:(NSString *)videoPath didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo{
+    if (error) {
+        NSLog(@"保存视频过程中发生错误，错误信息:%@",error.localizedDescription);
+    }else{
+        NSLog(@"视频保存成功.");
+        //录制完之后自动播放
+        if (self.finishBack) {
+            
+            self.finishBack(nil,videoPath);
+        }
+        
+       [self.picker dismissViewControllerAnimated:YES completion:nil];
+    }
+}
 
 - (void)showImagePickerController:(UIViewController *)vc andFinishBack:(cameraReturn)finishBack{
     
@@ -118,6 +168,36 @@ static VDCameraAndPhotoTool *tool ;
 }
 
 
+- (void)setUpImagePicker:(pickerType )type {
+    
+    self.picker = nil;
+    
+    self.picker = [[UIImagePickerController alloc] init];//初始化
+    self.picker.delegate = self;
+    self.picker.allowsEditing = NO;//设置不可编辑
+    
+    if (type == photoType) {
+        
+        UIImagePickerControllerSourceType sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        
+        self.picker.sourceType = sourceType;
+    }else if (type == cameraType || type == videoType){
+        
+        
+        UIImagePickerControllerSourceType sourceType = UIImagePickerControllerSourceTypeCamera;
+        self.picker.sourceType = sourceType;
+        
+        if (type == videoType) {
+            
+            self.picker.mediaTypes = [[NSArray alloc] initWithObjects: (NSString *) kUTTypeMovie, nil];
+            self.picker.videoQuality=UIImagePickerControllerQualityTypeIFrame1280x720;
+            self.picker.cameraCaptureMode=UIImagePickerControllerCameraCaptureModeVideo;
+        }
+        
+    }
+    
+}
+
 #pragma mark - actionsheet delegate
 
 
@@ -125,11 +205,15 @@ static VDCameraAndPhotoTool *tool ;
     
     if (buttonIndex == 0) {
         
-        [self showCameraInViewComtroller:self.fromVc andFinishBack:nil];
+        [self showCameraInViewController:self.fromVc andFinishBack:nil];
         
     }else if (buttonIndex == 1) {
         
-        [self showPhotoInViewComtroller:self.fromVc andFinishBack:nil];
+        [self showPhotoInViewController:self.fromVc andFinishBack:nil];
+        
+    }else if (buttonIndex == 2) {
+        
+        [self showVideoInViewController:self.fromVc andFinishBack:nil];
     }
 
 }
@@ -140,7 +224,7 @@ static VDCameraAndPhotoTool *tool ;
 
 - (UIActionSheet *)actionSheet {
     if (_actionSheet == nil) {
-        _actionSheet = [[UIActionSheet alloc]initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"拍照" otherButtonTitles:@"相册", nil];
+        _actionSheet = [[UIActionSheet alloc]initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"拍照" otherButtonTitles:@"相册",@"录像", nil];
     }
     return _actionSheet;
 }

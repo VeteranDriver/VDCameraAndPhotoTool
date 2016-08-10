@@ -8,14 +8,22 @@
 
 #import <UIKit/UIKit.h>
 
-typedef void(^cameraReturn)(UIImage *image);
-typedef void(^videoReturn)(NSURL *videoUrl);
+typedef void(^cameraReturn)(UIImage *image,NSString *videoPath);
 
 @interface VDCameraAndPhotoTool : NSObject<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
-
+/**
+ *  单例
+ *
+ *  @return VDCameraAndPhotoTool对象
+ */
 + (instancetype)shareInstance;
-
-- (void)showVideoInViewController:(UIViewController *)vc andFinishBack:(videoReturn)finishBack;
+/**
+ *  调用系统相机录像
+ *
+ *  @param vc         要调用相机的控制器
+ *  @param finishBack 录像完成的回调
+ */
+- (void)showVideoInViewController:(UIViewController *)vc andFinishBack:(cameraReturn)finishBack;
 /**
  *  调用系统相机
  *
@@ -32,7 +40,7 @@ typedef void(^videoReturn)(NSURL *videoUrl);
 - (void)showPhotoInViewController:(UIViewController *)vc andFinishBack:(cameraReturn)finishBack;
 
 /**
- *  显示相机或相册（弹出alert）
+ *  显示相机、录像或相册（弹出alert）
  *
  *  @param vc        控制器
  *  @param finsished 完成回掉
