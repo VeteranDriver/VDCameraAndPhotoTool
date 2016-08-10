@@ -9,7 +9,8 @@
 #import "VDCameraAndPhotoTool.h"
 #import "UIImage+Extension.h"
 #import <MobileCoreServices/MobileCoreServices.h>
-
+#import <AVFoundation/AVFoundation.h>
+#import <AssetsLibrary/AssetsLibrary.h>
 
 typedef enum {
     
@@ -138,10 +139,10 @@ static VDCameraAndPhotoTool *tool ;
 
 //视频保存后的回调
 - (void)video:(NSString *)videoPath didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo{
-    if (error) {
-        NSLog(@"保存视频过程中发生错误，错误信息:%@",error.localizedDescription);
-    }else{
-        NSLog(@"视频保存成功.");
+    if (error) {//可以在此解析错误
+        
+    }else{//保存成功
+        
         //录制完之后自动播放
         if (self.finishBack) {
             
@@ -178,22 +179,64 @@ static VDCameraAndPhotoTool *tool ;
     
     if (type == photoType) {
         
+        //判断用户是否允许访问相册权限
+        ALAuthorizationStatus author = [ALAssetsLibrary authorizationStatus];
+        if (author == ALAuthorizationStatusRestricted || author ==ALAuthorizationStatusDenied){
+            //无权限
+            return;
+        }
         UIImagePickerControllerSourceType sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
         
         self.picker.sourceType = sourceType;
-    }else if (type == cameraType || type == videoType){
+    }else if (type == cameraType){
+        //判断用户是否允许访问相机权限
+        AVAuthorizationStatus authStatus = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
+        if (authStatus == AVAuthorizationStatusRestricted || authStatus ==AVAuthorizationStatusDenied)
+        {
+            //无权限
+            return;
+        }
+        //判断用户是否允许访问相册权限
+        ALAuthorizationStatus author = [ALAssetsLibrary authorizationStatus];
+        if (author == ALAuthorizationStatusRestricted || author ==ALAuthorizationStatusDenied){
+            //无权限
+            return;
+        }
+        UIImagePickerControllerSourceType sourceType = UIImagePickerControllerSourceTypeCamera;
+        self.picker.sourceType = sourceType;
         
+        
+    }else if (type == videoType) {
+        //判断用户是否允许访问相机权限
+        AVAuthorizationStatus authStatus = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
+        if (authStatus == AVAuthorizationStatusRestricted || authStatus ==AVAuthorizationStatusDenied)
+        {
+            //无权限
+            return;
+        }
+        
+        //判断用户是否允许访问麦克风权限
+        authStatus = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeAudio];
+        if (authStatus == AVAuthorizationStatusRestricted || authStatus ==AVAuthorizationStatusDenied)
+        {
+            //无权限
+            return;
+        }
+
+        //判断用户是否允许访问相册权限
+        ALAuthorizationStatus author = [ALAssetsLibrary authorizationStatus];
+        if (author == ALAuthorizationStatusRestricted || author ==ALAuthorizationStatusDenied){
+            //无权限
+            return;
+        }
         
         UIImagePickerControllerSourceType sourceType = UIImagePickerControllerSourceTypeCamera;
         self.picker.sourceType = sourceType;
         
-        if (type == videoType) {
-            
-            self.picker.mediaTypes = [[NSArray alloc] initWithObjects: (NSString *) kUTTypeMovie, nil];
-            self.picker.videoQuality=UIImagePickerControllerQualityTypeIFrame1280x720;
-            self.picker.cameraCaptureMode=UIImagePickerControllerCameraCaptureModeVideo;
-        }
-        
+        self.picker.mediaTypes = [[NSArray alloc] initWithObjects: (NSString *) kUTTypeMovie, nil];
+        self.picker.videoQuality=UIImagePickerControllerQualityTypeIFrame1280x720;
+        self.picker.cameraCaptureMode=UIImagePickerControllerCameraCaptureModeVideo;
+       
     }
     
 }
